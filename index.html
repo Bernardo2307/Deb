@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPMASTER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="../imagens/bag-shopping-solid.svg" type="image/x-icon">
+</head>
+
+<body style="background-color:rgb(26, 24, 27);">
+    <!--Início header-->
+    <header>
+        <nav class="navbar navbar-expand-md px-4 py-0" style="background-color: rgb(72, 194, 61);">
+            <div class="container-fluid">
+                <div class="container d-block align-items-center mt-3" id="brand-header"
+                    style="flex-shrink: 10; line-height: 0.7em;">
+                    <p><strong>Bernardo Elias</strong></p>
+                    <p>N° matrícula: <strong>814704</strong></p>
+                    <p>Curso: Engenharia de Software</p>
+                </div>
+                <div class="row justify-content-md-center" style="flex-basis: 50%;">
+                    <div class="col-md-12">
+                        <form class="d-flex align-items-center justify-content-center my-2 my-lg-0" id="form-pesquisa">
+                            <input class="form-control me-2" id="search-item" type="text"
+                                placeholder="Pesquisar produto" aria-label="Pesquisar" style="width: 50%;" onkeyup="search()">
+                        </form>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="caixa-lista-header collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav text-center" id="lista-header">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <b></b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <b></b>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <b></b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--Fim header-->
+    <main id="tela">
+        <section>
+            <section class="">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                            <div class="d-flex flex-column h-100 justify-content-center align-items-center">
+                                <form action="" method="get" id="formPesquisa-rapida"
+                                    class="mb-3 mt-3 border border-dark p-3" style="background-color: rgb(255, 255, 255);">
+                                    <fieldset>
+                                        <legend> Encontre o produto perfeito para você</legend>
+                                       
+
+                                        <div class="mb-3">
+                                            <label for="marca-produto" class="form-label">Marca:</label>
+                                            <select id="marca-produto" class="form-select bg-light-subtle">
+                                                <option value="">Marca:</option>
+                                                <option value="Wildcraft">Wildcraft</option>
+                                                <option value="Nike">Nike</option>
+                                                <option value="Olay">Flying Machine</option>
+                                                
+                                            </select>
+                                        </div>
+
+                                        
+
+                                
+
+                                        <div class="text-center">
+                                            <a type="submit" id="btnProcurar-produto"
+                                                class="btn btn-success rounded-pill fw-bold" onclick="searchForm()" target="_blank">Procurar</a>
+                                        </div>
+
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <!--Inicio carrossel-->
+                        <div class="col-lg-9">
+                            <div class="d-flex flex-column h-100 justify-content-center">
+                                <div id="carouselExampleIndicators" class="carousel slide mt-3 mb-3">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                            aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner h-100">
+                                        <div class="carousel-item active">
+                                            <img src="imagem1.png.webp" class="d-block w-100 img-carousel"
+                                                alt="imagem 1 carrossel">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="imagem2.png.webp" class="d-block w-100 img-carousel"
+                                                alt="imagem 2 carrossel">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="imagem3.png.webp" class="d-block w-100 img-carousel"
+                                                alt="imagem 3 carrossel">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fim carrossel-->
+                    </div>
+                </div>
+            </section>
+
+            <!-- início fotos e barra lateral -->
+            <section class="row flex-rol col-12"
+                style="display: flex; justify-content: center; align-items: flex-start;">
+
+                <div class="row flex-row col-9" id="products-list">
+                </div>
+                <!-- fim fotos -->
+
+                <!--início barra lateral-->
+                <aside class="row col-12 col-lg-3 me-2 mt-4"
+                    style="display: flex; justify-content: center; align-items: center;">
+                    <div class="card">
+                        <span class="text-center">
+                            <h5>Melhores avaliados</h5>
+                        </span>
+                        <div class="card body bg-light mb-3" id="aside-list"> 
+                            <!--Chama a API dos produtos Melhores avaliados -->
+                        </div>
+                    </div>
+                    <!--fim barra lateral-->
+
+                    <!--início newsletter-->
+                    <div class="card me-2 mt-5 mb-5" style="background-color: rgb(13, 14, 13);">
+                        <div class="mt-1 pt-3" style="background-color: rgb(255, 255, 255);">
+                            <span class="text-center text-dark">
+                                <h5>Newsletter</h5>
+                            </span>
+                        </div>
+                        <div class="ps-2 pt-3 text-dark" style="background-color: rgb(255, 255, 255);">
+                            <span class="text-center">Assine nossa newsletter e fique sempre por dentro!</span>
+                        </div>
+                        <form class="flex-row mb-3 mt-3" style="background-color: rgb(44, 43, 41);">
+                            <div class="form-group  ">
+                                <div class="input-group px-2 mb-1">
+                                    <input class="form-control " type="search" placeholder="Insira seu e-mail">
+                                    <button class="btn btn-success " type="submit">
+                                        Junte-se agora!
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--fim newsletter-->
+                </aside>
+            </section>
+            <!-- fim fotos e barra lateral -->
+        </section>
+        <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#" id="page1" onclick="init(1)">1</a></li>
+              <li class="page-item"><a class="page-link" href="#" id="page2" onclick="init(2)">2</a></li>
+              <li class="page-item"><a class="page-link" href="#" id="page3" onclick="init(3)">3</a></li>
+              <li class="page-item"><a class="page-link" href="#" id="page4" onclick="init(4)">4</a></li>
+              <li class="page-item"><a class="page-link" href="#" id="page5" onclick="init(5)">5</a></li>
+              <li class="page-item"><a class="page-link" href="#" id="page6" onclick="init(6)">6</a></li>
+              <li class="page-item"><a class="page-link" href="#" id="page7" onclick="init(7)">7</a></li>
+              <li class="page-item"><a class="page-link" href="#" id="page8" onclick="init(8)">8</a></li>
+            </ul>
+          </nav>
+    </main>
+
+    <!-- início footer -->
+    <footer class="text-center text-lg-start bg-white text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Siga as nossas redes sociais:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3 text-secondary"></i>CapMaster
+                        </h6>
+                        <p>
+                            Na CapMaster, somos apaixonados por bonés e estamos empenhados em oferecer a você os produtos mais estilosos e de alta qualidade do mercado.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                           Produtos
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">bone</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">toca</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset"></a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset"></a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Links Uteis
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Itens mais vistos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Descontos</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset"></a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset"></a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contato</h6>
+                        <p><i class="fas fa-home me-3 text-secondary"></i> Rua Alemao,Jardim Riacho,58,BH</p>
+                        <p>
+                            <i class="fas fa-envelope me-3 text-secondary"></i>
+                            bone@melhorespreços.com
+                        </p>
+                        <p><i class="fas fa-phone me-3 text-secondary"></i> (31)7890-6549</p>
+                        
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+           
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/"></a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!--fim footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
